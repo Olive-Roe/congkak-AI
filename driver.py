@@ -89,4 +89,4 @@ def playGame(replayFile="", player1="simple", player2="simple", replayName="", p
 
 
 if __name__ == "__main__":
-    print(playGame())
+    playGame(player1="player", player2="simple")
