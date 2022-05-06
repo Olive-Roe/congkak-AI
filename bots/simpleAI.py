@@ -1,6 +1,10 @@
 import congkak
 from random import choice
 
+'''An AI that follows two rules:
+1) from left to right, if choosing a pit allows it to do another move, choose it immediately
+2) if there are no such pits, choose the pit with the biggest amount of marbles inside'''
+
 
 def play(turn, board, p1pit, p2pit, data):
     evaluation = 0
