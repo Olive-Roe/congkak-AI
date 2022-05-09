@@ -1,11 +1,12 @@
 from congkak import *
-from bots import marbleAI, randomAI, simpleAI
+from bots import greedyAI, marbleAI, randomAI, simpleAI
 import time
 from os.path import exists
 
 BOT_ALIAS = {"marble": marbleAI,
              "random": randomAI,
-             "simple": simpleAI}
+             "simple": simpleAI,
+             "greedy": greedyAI}
 
 
 # sourcery skip: merge-nested-ifs
@@ -89,4 +90,4 @@ def playGame(replayFile="", player1="simple", player2="simple", replayName="", p
 
 
 if __name__ == "__main__":
-    playGame(player1="player", player2="simple")
+    playGame(player1="greedy", player2="player")

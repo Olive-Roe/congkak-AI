@@ -3,7 +3,7 @@ import csv
 from pathlib import Path
 
 
-PLAYERS = ["random", "simple"]
+PLAYERS = ["random", "simple", "greedy"]
 
 
 def isFloat(num):
@@ -48,9 +48,11 @@ def logGame(name, result, file="tournament/gamelog.txt"):
     with open(file, "a") as f:
         f.write(f"{name} {result}\n")
 
+
 def resetGameLog(file="tournament/gamelog.txt"):
     with open(file, "w") as f:
         pass
+
 
 def playTournament(players, rounds, filename="tournament/score.csv", replayFolder="tournament/games/", gamelog="tournament/gamelog.txt"):
     resetGameLog(file=gamelog)
