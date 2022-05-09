@@ -1,6 +1,7 @@
 import congkak
 
-'''An unfinished AI that will play itself, using a Monte Carlo tree search to learn and improves'''
+'''An unfinished AI that will play itself, using a Monte Carlo tree search to learn and improve'''
+
 
 def play(turn, board, p1pit, p2pit, data):
     bestEvaluation = float("-inf") if turn == 1 else float("inf")
