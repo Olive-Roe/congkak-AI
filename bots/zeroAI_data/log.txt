@@ -1,0 +1,12 @@
+
+
+Day 1 (29/7/22)
+vs simpleAI - 1000 game matches
+    7.2% win rate
+    8.6%
+    12%
+    13.8% (weights ~ 2mb)
+    18.5% (weights 2.2mb)
+    
+
+
