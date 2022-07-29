@@ -3,7 +3,7 @@ import tournament_driver
 from time import time
 
 s = time()
-tournament_driver.playTournament(["zero", "simple"], 50)
+tournament_driver.playTournament(["zero", "simple"], 500)
 e = time()
 print(e-s)
 
