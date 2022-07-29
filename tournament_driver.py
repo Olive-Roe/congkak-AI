@@ -2,8 +2,7 @@ import driver
 import csv
 from pathlib import Path
 
-
-PLAYERS = ["random", "simple", "greedy"]
+PLAYERS = list(driver.BOT_ALIAS.keys())
 
 
 def isFloat(num):

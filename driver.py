@@ -1,12 +1,14 @@
 from congkak import *
-from bots import greedyAI, marbleAI, randomAI, simpleAI
+from bots import greedyAI, marbleAI, randomAI, simpleAI, grimpleAI, zeroAI
 import time
 from os.path import exists
 
-BOT_ALIAS = {"marble": marbleAI,
-             "random": randomAI,
-             "simple": simpleAI,
-             "greedy": greedyAI}
+BOT_ALIAS = {  # "marble": marbleAI,
+    "random": randomAI,
+    "simple": simpleAI,
+    "greedy": greedyAI,
+    "grimple": grimpleAI,
+    "zero": zeroAI}
 
 
 # sourcery skip: merge-nested-ifs
@@ -28,11 +30,20 @@ def getMove(turn, board, name="player",  p1pit="", p2pit="", data=""):
         return move
 
 
+def game_finished(winVal, name1="player", name2="player"):
+    for _ in name1, name2:
+        if name1 == "zero":
+            BOT_ALIAS["zero"].finish_game(float(winVal))
+        if name2 == "zero":
+            BOT_ALIAS["zero"].finish_game(1.0-float(winVal))
+
+
 def playGame(replayFile="", player1="simple", player2="simple", replayName="", pathToReplay="replays/"):
     moveList = []
     turn = 1
     board = setupBoard()
     p1pit, p2pit = 0, 0
+    p1data, p2data = {}, {}
     displayBoard(board, p1pit, p2pit, turn)
     if replayFile != "":
         with open(f"{pathToReplay}{replayFile}.txt", "r") as f:
@@ -61,7 +72,9 @@ def playGame(replayFile="", player1="simple", player2="simple", replayName="", p
             displayBoard(board, p1pit, p2pit, turn)
             continue
         name = player1 if turn == 1 else player2
-        move = getMove(turn, board, name=name, p1pit=p1pit, p2pit=p2pit)
+        data = p1data if turn == 1 else p2data
+        move = getMove(turn, board, name=name,
+                       p1pit=p1pit, p2pit=p2pit, data=data)
         print(f"Player {name} made move {move}")
         moveList.append(str(move))
         board, p1pit, p2pit, moveAgain = makeMove(
@@ -74,6 +87,7 @@ def playGame(replayFile="", player1="simple", player2="simple", replayName="", p
     win, winVal = ("No one", 0.5) if p1pit == p2pit else (
         "Player 1", 1.0) if p1pit > p2pit else ("Player 2", 0)
     print(f"{win} wins.")
+    game_finished(winVal, player1, player2)
     if replayFile == "":
         if replayName == "":
             print(moveList)
