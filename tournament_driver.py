@@ -83,4 +83,4 @@ def playTournament(players, rounds, filename="tournament/score.csv", replayFolde
 
 
 if __name__ == "__main__":
-    playTournament(["zero", "simple"], 50)
+    playTournament(PLAYERS, 10)

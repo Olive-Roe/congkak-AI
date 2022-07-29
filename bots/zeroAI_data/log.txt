@@ -13,8 +13,29 @@ vs simpleAI - 1000 game matches
     26.95% (2.9mb)
     24.9% (3mb)
     29.5% (3.1mb)
-    31.9% (3.2mb)
-
-
+    31.95% (3.2mb)
+    40.45% (3.3mb)
+vs human
+    lost (human vs zero) (5 4 3 0 1 0 5 6 1 8 3 1 2 5 4 10 7 6 4 2 0 0 3 10 4 6 2 0 3 7 6 4 3 2 1 0)
+vs all AI
+    9-11 vs simpleAI (only losses simpleAI sustains)
+    10-10 vs randomAI # most concerning
+    7.5-12.5 vs greedyAI
+    3-17 vs grimpleAI
+(similar results with a second round)
+# hopefully this isn't only becoming good at beating simpleAI
+# training it from scratch in the future might be a good idea
+vs simpleAI - 1000 game matches
+    42.5% (3.5mb)
+    41.6% (3.6mb)
+    41.35% (3.8mb)
+vs all AI
+    6-14 vs simpleAI
+    11-9 vs randomAI
+    10-10 vs greedyAI
+    4-16 vs grimpleAI
+# maybe the few rounds it had with the others helped
+# but may have reduced its performance with simpleAI
+# the optimum would be for it to train with itself
 
 

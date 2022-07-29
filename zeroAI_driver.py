@@ -7,8 +7,8 @@ tournament_driver.playTournament(["zero", "simple"], 500)
 e = time()
 print(e-s)
 
-# driver.playGame(replayFile="zero_vs_simple_5",
-#                 pathToReplay="tournament/games/")
+driver.playGame(replayFile="zero_vs_simple_5",
+                pathToReplay="tournament/games/")
 
 
 def stamp_weights(name):
@@ -19,3 +19,5 @@ def stamp_weights(name):
 
 
 stamp_weights("day 1")
+
+# driver.playGame(player1="player", player2="zero")
