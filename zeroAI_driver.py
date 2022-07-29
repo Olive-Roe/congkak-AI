@@ -1,12 +1,21 @@
 import driver
+import tournament_driver
 from time import time
 
-s1 = time()
-for round_num in range(100):
-    driver.playGame(player1="zero", player2="simple",
-                    replayName=f"zeroAI vs simpleAI {round_num+1}", pathToReplay="replays/zeroAI_replays/")
-    driver.playGame(player1="simple", player2="zero",
-                    replayName=f"simpleAI vs zeroAI {round_num+1}", pathToReplay="replays/zeroAI_replays/")
-e1 = time()
-t1 = e1 - s1
-print(t1)
+s = time()
+tournament_driver.playTournament(["zero", "simple"], 50)
+e = time()
+print(e-s)
+
+# driver.playGame(replayFile="zero_vs_simple_5",
+#                 pathToReplay="tournament/games/")
+
+
+def stamp_weights(name):
+    with open("bots/zeroAI_data/weights.py", "r") as w:
+        contents = w.read()
+    with open(f"bots/zeroAI_data/{name}.py", "w") as f:
+        f.write(contents)
+
+
+stamp_weights("day 1")
