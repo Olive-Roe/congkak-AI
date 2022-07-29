@@ -1,6 +1,7 @@
 
 
 Day 1 (29/7/22)
+[14241 games at least]
 vs simpleAI - 1000 game matches
     7.2% win rate
     8.65%
@@ -39,6 +40,7 @@ vs all AI
 # the optimum would be for it to train with itself
 
 night 1
+[8280 matches at least, mostly against simpleAI]
 vs simpleAI - 100 game matches
     45.5% win rate (3.9mb)
     41%
