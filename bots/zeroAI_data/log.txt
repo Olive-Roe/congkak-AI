@@ -38,4 +38,26 @@ vs all AI
 # but may have reduced its performance with simpleAI
 # the optimum would be for it to train with itself
 
-
+night 1
+vs simpleAI - 100 game matches
+    45.5% win rate (3.9mb)
+    41%
+# for now playing simpleAI seems like a good way forward
+# then after it can beat simpleAI by a large margin train it against itself or other playstyles
+# playing just one playstyle changes its own playstyle and also limits its options
+# but probably doesn't deprove it against other AIs yet
+vs simpleAI - 1000 game matches
+    44%
+    50% # first draw
+    54% # first win
+    57%
+    57%
+    57%
+    59%
+    57% (weights after: 4.4mb)
+vs all AI
+    11-9 vs simpleAI # first 20-game win against simple
+    8.5-11.5 vs randomAI # worse than random
+    10-10 vs greedyAI
+    4-16 vs grimpleAI
+# tomorrow, play against grimple or itself to improve
