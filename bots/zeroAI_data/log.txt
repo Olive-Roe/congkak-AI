@@ -1,7 +1,7 @@
-
+ZeroAI Log
 
 Day 1 (29/7/22)
-[14241 games at least]
+[14241 games at least, mostly against simpleAI]
 vs simpleAI - 1000 game matches
     7.2% win rate
     8.65%
@@ -39,7 +39,7 @@ vs all AI
 # but may have reduced its performance with simpleAI
 # the optimum would be for it to train with itself
 
-night 1
+Night 1
 [8280 matches at least, mostly against simpleAI]
 vs simpleAI - 100 game matches
     45.5% win rate (3.9mb)
@@ -63,3 +63,76 @@ vs all AI
     10-10 vs greedyAI
     4-16 vs grimpleAI
 # tomorrow, play against grimple or itself to improve
+
+Day 2
+[18k games]
+# trying to see if playing grimpleAI yields improvements
+vs grimpleAI - 100 game matches
+[1k games]
+    22% win rate # similar to previous performance
+    25% # because this is 100-game, improvement is too small to matter
+    17%
+    19.5%
+    29%
+    33%
+    32%
+    28%
+    35%
+    35% (4.6mb)
+    # definitely some improvement
+# three possibilities now: 
+# training with grimple reduces winning against simple because it unlearns strategy
+# training with grimple doesn't affect winning against simple because it specialises in grimple
+# training improves winning against simple because it teaches it more playstyles
+vs simpleAI - 1000 game matches
+[2k games]
+    59.45% # slight improvement from before
+    58.6%
+# training against one AI doesn't seem to affect the others (too significantly, 1000 games of grimple may not make a difference)
+# which is good in that it doesn't overspecialise, but bad in the fact that it is not improving overall
+# maybe training it against itself will yield the most overall improvement
+# training against random may be a good base line as well, starting from the worst AI rather than the best
+vs grimpleAI - 1000 game matches
+[9k games]
+    33.45%
+    34.05%
+    33.0%
+    34.55% # slow improvement
+    38.75%
+    42.7%
+    41.85% (5.6mb)
+    41.9%
+    42.1% (5.7mb)
+vs simpleAI - 1000 game match
+[1k games]
+    56.55% # slight deprovement?
+vs randomAI - 1000 game matches
+[5k games]
+    53.9% # started out losing but evened quickly
+    54.05%
+    54.95% # slow progress (8.5mb)
+    55.2% (9.4mb)
+    # with randomAI more paths are being explored and therefore a higher file size
+    # the games are taking longer due to the time taken to write to the file at the end
+    54.0% (10.3mb)
+# try option to not learn after every game (for evaluation)
+# at the end of each game, no backpropagation
+# maybe also hash the codes to save space
+{no learning mode} [20k games without training]
+    vs randomAI - 1k game matches: 53.85%, 52.5%, 54.5%, 57.5%, 55.95%
+    vs simpleAI - 1k game matches: 57.4%, 57.1%, 58.4%, 58.7%, 56.85%
+    vs grimpleAI - 1k game matches: 41.1%, 41.6%, 41.4%, 40.3%, 41.25%
+    vs greedyAI - 1k game matches: 42.3%, 44.15%, 42.2%, 42.15%, 43.35
+# it seems training it against random only increases its storage but not performance yet
+# training it against itself may be the only way for overall improvement, but will increase storage as well
+# but to save time it may only write to the file every couple of games
+# testing writing weights every 100 games
+vs simpleAI - 100 game matches (10.4mb)
+    56.0%, 57.75%, 57.25%, 61.25%, 56.5%, 57.0%, 59.5%, 58.75%, 58.5%, 53.75%, 59.25%, 59.0%, 59.25%, 59.0%, 60.5%, 59.0%, 62.5%, 56.75%
+# much faster, not sure if data is saved throughout or only from the last one
+# testing writing weights every 1k games
+vs simpleAI - 1k game matches
+    57.2%, 57.7%, 58.5%, 57.75%, 58.0%, 57.55%, 58.25%, 57.45%, 57.15%, 60.65%, 58.1%, 58.15%
+vs itself - 10k games (27mb)
+# very fast, only took about 5-10 minutes but gained a lot of storage
+

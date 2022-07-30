@@ -62,7 +62,12 @@ def play(turn, board, p1pit, p2pit, data):
     return move, 0
 
 
+noLearning = True
+
+
 def finish_game(winVal):
+    if noLearning:
+        return None
     global WEIGHTS
     # back propagation
     history = local_data["history"]
@@ -76,4 +81,4 @@ def finish_game(winVal):
         WEIGHTS[state][move] += multiplier * change
         # set weight to 0 if below 0
         WEIGHTS[state][move] = int(max(WEIGHTS[state][move], 0))
-    save_weights()
+    #save_weights()
