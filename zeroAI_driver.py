@@ -37,12 +37,15 @@ def restore_from_backup(filename):
         g.write(c)
 
 # evaluation
+
+
 def test():
     opponents = ["simple", "random", "greedy", "grimple"]
-    for _ in range(5):
-        for opp in opponents:
+    for opp in opponents:
+        for _ in range(5):
             tournament_driver.playTournament(["zero", opp], 500)
             autolog(f"vs {opp}", 1000)
+
 
 def main():
     # for _ in range(20):
@@ -59,15 +62,11 @@ def main():
     #     stamp_weights("day 2")
 
 
-
-
 # tournament_driver.playTournament(["zero", "simple"], 500)
 # stamp_weights("day 2")
 # autolog(1000)
 
-
 # driver.playGame(player1="player", player2="zero")
-
 CURRENT_DAY = "day 2"
 if __name__ == "__main__":
     # try:
